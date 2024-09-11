@@ -9,12 +9,13 @@ public enum RoadLine
     LEET = -1,
     MIDDLE = 0,
     RLGHT = 1
-
+            
  }
 public class Runner : MonoBehaviour
 {
     [SerializeField] RoadLine roadLine;
     [SerializeField] float positionX = 2.0f;
+    [SerializeField] float speed = 25.0f;
 
     public Rigidbody rigidbody;
 
@@ -101,7 +102,13 @@ public class Runner : MonoBehaviour
         #endregion
 
         #region 강사님 풀이
-        rigidbody.position = new Vector3(positionX  * (int)roadLine , 0, 0);
+        rigidbody.position = Vector3.Lerp //러프 사용법(시작 지점, 가려는지점, 속도)
+            (
+            rigidbody.position,
+            new Vector3(positionX * (int)roadLine, 0, 0), 
+            speed* Time.fixedDeltaTime
+            ) ;
+        //rigidbody.position = new Vector3(positionX  * (int)roadLine , 0, 0);
         #endregion
     }
 
