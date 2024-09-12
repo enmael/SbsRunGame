@@ -5,17 +5,17 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class SceneryManager : MonoBehaviour
+public class SceneryManager : Singleton<SceneryManager>
 {
     [SerializeField] Image screenImage;
 
-    private void Awake()
-    {
-        //특정 게임 오브젝트가 장면(Scene) 간에 파괴되지 않도록 유지하게 해줍니다.
-        //장면을 변경할 때 해당 게임 오브젝트가 계속해서 존재하도록 합니다.
-        DontDestroyOnLoad(gameObject);
+    //private void Awake()
+    //{
+    //    //특정 게임 오브젝트가 장면(Scene) 간에 파괴되지 않도록 유지하게 해줍니다.
+    //    //장면을 변경할 때 해당 게임 오브젝트가 계속해서 존재하도록 합니다.
+    //    DontDestroyOnLoad(gameObject);
 
-    }
+    //}
 
     void Start()
     {

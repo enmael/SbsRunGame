@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public enum RoadLine
@@ -24,40 +23,14 @@ public class Runner : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();  
     }
 
+    private void OnEnable()
+    {
+        InputManager.Instance.action += OnKeyUpdate;
+    }
+
     private void Start()
     {
         roadLine = RoadLine.MIDDLE;
-    }
-
-
-    private void Update()
-    {
-        #region 강사님 풀이
-        OnKeyUpdate();
-        #endregion
-
-        #region 내풀이
-
-        //if (Input.GetKeyDown(KeyCode.A) && roadLine == RoadLine.MIDDLE)
-        //{
-        //    roadLine = RoadLine.LEET;
-        //}
-        //else if (Input.GetKeyDown(KeyCode.D) && roadLine == RoadLine.MIDDLE)
-        //{
-        //    roadLine = RoadLine.RLGHT; 
-        //}
-        //else if(Input.GetKeyDown(KeyCode.D) && roadLine == RoadLine.LEET)
-        //{
-        //    roadLine = RoadLine.MIDDLE;
-        //}
-        //else if( Input.GetKeyDown(KeyCode.A) && roadLine == RoadLine.RLGHT)
-        //{
-        //    roadLine = RoadLine.MIDDLE;
-        //}
-        #endregion
-
-
-
     }
 
     private void FixedUpdate()
@@ -113,6 +86,40 @@ public class Runner : MonoBehaviour
     }
 
 
+    private void OnDisable()
+    {
+        InputManager.Instance.action -= OnKeyUpdate;
+    }
 
 
+
+    //private void Update()
+    //{
+    //    #region 강사님 풀이
+    //    OnKeyUpdate();
+    //    #endregion
+
+    //    #region 내풀이
+
+    //    //if (Input.GetKeyDown(KeyCode.A) && roadLine == RoadLine.MIDDLE)
+    //    //{
+    //    //    roadLine = RoadLine.LEET;
+    //    //}
+    //    //else if (Input.GetKeyDown(KeyCode.D) && roadLine == RoadLine.MIDDLE)
+    //    //{
+    //    //    roadLine = RoadLine.RLGHT; 
+    //    //}
+    //    //else if(Input.GetKeyDown(KeyCode.D) && roadLine == RoadLine.LEET)
+    //    //{
+    //    //    roadLine = RoadLine.MIDDLE;
+    //    //}
+    //    //else if( Input.GetKeyDown(KeyCode.A) && roadLine == RoadLine.RLGHT)
+    //    //{
+    //    //    roadLine = RoadLine.MIDDLE;
+    //    //}
+    //    #endregion
+
+
+
+    //}
 }
