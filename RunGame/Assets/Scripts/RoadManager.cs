@@ -26,7 +26,7 @@ public class RoadManager : MonoBehaviour
         AddRod();
     }
 
-    private void Update() //¸ÊÀÌ ¿òÁ÷ÀÎ´Ù.
+    private void Update() //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Î´ï¿½.
     {
         for (int i = 0; i < roads.Count; i++)
         {
@@ -40,14 +40,14 @@ public class RoadManager : MonoBehaviour
         }
     }
 
-    void AddRod() //ÀÚµ¿À¸·Î ¸®½ºÆ®¿¡ ³Ö´Â ¹æ¹ý 
+    void AddRod() //ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ 
     {
         for (int i = 0; i < createCount; i++)
         {
             roads.Add(transform.GetChild(i).gameObject);
         }
     }
-    void newPosition()
+    public void newPosition()
     {
         //GameObject game = roads[0];
         //roads.RemoveAt(0);
@@ -60,7 +60,7 @@ public class RoadManager : MonoBehaviour
 
         //roads.Add(game);
 
-        #region °­»ç´Ô Ç®ÀÌ 
+        #region ï¿½ï¿½ï¿½ï¿½ï¿½ Ç®ï¿½ï¿½ 
 
         GameObject newRoad = roads[0];
         roads.Remove(newRoad);
