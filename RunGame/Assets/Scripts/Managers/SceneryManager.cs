@@ -8,7 +8,7 @@ using TMPro;
 public class SceneryManager : Singleton<SceneryManager>
 {
     [SerializeField] Image screenImage;
-
+    [SerializeField] Button Button;
     //private void Awake()
     //{
     //    //특정 게임 오브젝트가 장면(Scene) 간에 파괴되지 않도록 유지하게 해줍니다.
@@ -74,10 +74,17 @@ public class SceneryManager : Singleton<SceneryManager>
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            StartCoroutine(AsyncLoad(1));
-        }
+        //if(Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    StartCoroutine(AsyncLoad(1));
+        //}
+
+        //OnButtonClick();
+    }
+
+    public void OnButtonClick()
+    {
+        StartCoroutine(AsyncLoad(1));
     }
 
     void OnSceneLoaded (Scene scene, LoadSceneMode mode)

@@ -366,6 +366,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 1383660902521121633, guid: 8762bef5cb754884f938259cba383535, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1819245412582909813, guid: 8762bef5cb754884f938259cba383535, type: 3}
       propertyPath: prefab
       value: 
@@ -578,6 +582,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 1383660902521121633, guid: 8762bef5cb754884f938259cba383535, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1819245412582909813, guid: 8762bef5cb754884f938259cba383535, type: 3}
       propertyPath: prefab
       value: 
@@ -632,6 +640,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7057635701600526594, guid: 8762bef5cb754884f938259cba383535, type: 3}
   m_PrefabInstance: {fileID: 794581128}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &794581130 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1819245412582909813, guid: 8762bef5cb754884f938259cba383535, type: 3}
+  m_PrefabInstance: {fileID: 794581128}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e724c11784a9fb4dbc4da2db2d57cb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &819274081
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,6 +817,18 @@ MonoBehaviour:
       - m_Target: {fileID: 524272944}
         m_TargetAssemblyTypeName: RoadManager, Assembly-CSharp
         m_MethodName: newPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1835050837}
+        m_TargetAssemblyTypeName: CoinManager, Assembly-CSharp
+        m_MethodName: InitializePosition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1150,7 +1181,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 64
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &1152571363
 CapsuleCollider:
@@ -1318,6 +1349,18 @@ MonoBehaviour:
       - m_Target: {fileID: 524272944}
         m_TargetAssemblyTypeName: RoadManager, Assembly-CSharp
         m_MethodName: newPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1835050837}
+        m_TargetAssemblyTypeName: CoinManager, Assembly-CSharp
+        m_MethodName: InitializePosition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1575,6 +1618,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 1383660902521121633, guid: 8762bef5cb754884f938259cba383535, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1819245412582909813, guid: 8762bef5cb754884f938259cba383535, type: 3}
       propertyPath: prefab
       value: 
@@ -1629,6 +1676,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7057635701600526594, guid: 8762bef5cb754884f938259cba383535, type: 3}
   m_PrefabInstance: {fileID: 1835050835}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1835050837 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1819245412582909813, guid: 8762bef5cb754884f938259cba383535, type: 3}
+  m_PrefabInstance: {fileID: 1835050835}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e724c11784a9fb4dbc4da2db2d57cb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1899912341 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2109670777337831394, guid: 51c23ba096a8f0b4cacbf0964cb6b0b9, type: 3}
@@ -1652,6 +1710,18 @@ MonoBehaviour:
       - m_Target: {fileID: 524272944}
         m_TargetAssemblyTypeName: RoadManager, Assembly-CSharp
         m_MethodName: newPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 794581130}
+        m_TargetAssemblyTypeName: CoinManager, Assembly-CSharp
+        m_MethodName: InitializePosition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1756,6 +1826,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 794581130}
+        m_TargetAssemblyTypeName: CoinManager, Assembly-CSharp
+        m_MethodName: InitializePosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &8679041846544134291
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1771,6 +1853,10 @@ PrefabInstance:
     - target: {fileID: 1383660902521121633, guid: 8762bef5cb754884f938259cba383535, type: 3}
       propertyPath: m_Name
       value: Coin Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1383660902521121633, guid: 8762bef5cb754884f938259cba383535, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1819245412582909813, guid: 8762bef5cb754884f938259cba383535, type: 3}
       propertyPath: prefab
