@@ -7,7 +7,7 @@ public class MenuManage : MonoBehaviour
  public void Execute()
     {
         // //StartCoroutine(SceneryManager.Instance.);
-        // StartCoroutine(SceneryManager.Instance.StartScenery("SceneryManager"));
+        StartCoroutine(SceneryManager.Instance.AsyncLoad(1));
     }
 
       public void Shop()

@@ -8,6 +8,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
@@ -22,13 +23,14 @@ public class CoinManager : MonoBehaviour
     [SerializeField] List<GameObject> coins;
 
     [SerializeField] float positionX = 3.5f;
+
+    //[SerializeField] MeshRenderer meshRenderer;
+
     private void Awake()
     {
         Create();
         coins.Capacity = 20; 
     }
-
- 
 
     public void Create()
     {
@@ -60,9 +62,12 @@ public class CoinManager : MonoBehaviour
 
 
             #endregion
-            clone.SetActive(false);
-
+            //clone.SetActive(false);
+            clone.GetComponent<MeshRenderer>().enabled = false;
+            clone.GetComponent<BoxCollider>().enabled = false;
+            
             coins.Add(clone);
+
         }
         
 
@@ -75,6 +80,18 @@ public class CoinManager : MonoBehaviour
         int pos = rand.Next(-1, 2);
 
         transform.localPosition = new Vector3(positionX * pos, 0, 0);
+
+
+        // Mesh Renderer를 비활성한걸 활성화 해서 
+        for (int i = 0; i < coins.Count; i++) 
+        {
+            if (coins[i].GetComponent<MeshRenderer>().enabled == false) 
+            {
+                coins[i].GetComponent<BoxCollider>().enabled = true;
+                coins[i].GetComponent<MeshRenderer>().enabled = true;
+            }
+        }
+
     }
    
 }

@@ -4,3 +4,8 @@ public interface IHitable
 
 }
 
+public interface IColliderable
+{
+    public void Activatr();
+}
+

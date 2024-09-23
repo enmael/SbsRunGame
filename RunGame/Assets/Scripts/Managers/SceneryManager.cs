@@ -74,7 +74,7 @@ public class SceneryManager : Singleton<SceneryManager>
 
     private void Update()
     {
-        //if(Input.GetKeyDown(KeyCode.Space))
+        //if (Input.GetKeyDown(KeyCode.Space))
         //{
         //    StartCoroutine(AsyncLoad(1));
         //}
@@ -82,10 +82,10 @@ public class SceneryManager : Singleton<SceneryManager>
         //OnButtonClick();
     }
 
-    public void OnButtonClick()
-    {
-        StartCoroutine(AsyncLoad(1));
-    }
+    //public void OnButtonClick()
+    //{
+    //    StartCoroutine(AsyncLoad(1));
+    //}
 
     void OnSceneLoaded (Scene scene, LoadSceneMode mode)
     {
