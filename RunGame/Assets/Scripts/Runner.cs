@@ -13,11 +13,16 @@ public enum RoadLine
  }
 public class Runner : MonoBehaviour
 {
+    RoadManager roadManager;
+    SppedManager sppedManager; 
+
     [SerializeField] RoadLine roadLine;
     [SerializeField] float positionX = 2.0f;
-    [SerializeField] float speed = 25.0f;
+    [SerializeField] float speed = 30;
 
     public Rigidbody rigidbody;
+
+    //public SppedManager sppedManager;
 
     private void Awake()
     {
@@ -36,6 +41,7 @@ public class Runner : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //speed = sppedManager.Speed();
         Move();
     }
     void OnKeyUpdate()

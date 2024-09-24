@@ -12,7 +12,7 @@ public class RoadManager : MonoBehaviour
     //float pos;
 
     [SerializeField] List<GameObject> roads;
-    [SerializeField] float speed = 5.0f;
+    //[SerializeField] float speed = 5.0f;
     [SerializeField] int createCount = 4;
     [SerializeField] float offset = 40.0f;
 
@@ -24,13 +24,15 @@ public class RoadManager : MonoBehaviour
     {
         roads.Capacity = 10;
         AddRod();
+
+        StartCoroutine(SppedManager.Instance.Increase()); //코루틴 호출
     }
 
     private void Update() //���� �����δ�.
     {
         for (int i = 0; i < roads.Count; i++)
         {
-            roads[i].transform.Translate(Vector3.back * speed * Time.deltaTime);
+            roads[i].transform.Translate(Vector3.back * SppedManager.Instance.Speed * Time.deltaTime);
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
