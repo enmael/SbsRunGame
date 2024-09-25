@@ -9,6 +9,7 @@ public class SeletButtom : MonoBehaviour
 {
     
     [SerializeField] Text Text;
+    [SerializeField] AudioClip enterAudioClip;
 
     private void Awake()
     {
@@ -17,6 +18,7 @@ public class SeletButtom : MonoBehaviour
     public void OnEnter()
     {
         Text.fontSize = 85;
+        AudioManager.Instance.Listen(enterAudioClip);
     }
 
     public void OnLeave()

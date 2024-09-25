@@ -197,6 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: {fileID: 0}
+  enterAudioClip: {fileID: 8300000, guid: 55cfad0ebeb276c4ba7b617a27a756e4, type: 3}
 --- !u!1 &9145730957153587151
 GameObject:
   m_ObjectHideFlags: 0

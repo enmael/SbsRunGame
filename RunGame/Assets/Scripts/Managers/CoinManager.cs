@@ -42,7 +42,11 @@ public class CoinManager : MonoBehaviour
         for (int i = 0; i < creatreCount; i++) 
         {
 
-            GameObject clone = Instantiate(prefab);
+            //GameObject clone = Instantiate(prefab);
+
+            //ResourcesManager 싱글톤으로해서 코드 간소화함
+            GameObject clone = ResourcesManager.Instance.Instantiate("Coin"); 
+
             clone.transform.SetParent(gameObject.transform);
 
             clone.transform.localPosition = new Vector3(0, 0, offset * i);
@@ -51,12 +55,12 @@ public class CoinManager : MonoBehaviour
 
             #region 코인 오브젝트에서 Clone 지우기 
             
-            int index = clone.name.IndexOf("(Clone)");
-            if (index > -1) 
-            {
-                clone.name = clone.name.Substring(0, index);
-                //clone.name = clone.name + i;
-            }
+            //int index = clone.name.IndexOf("(Clone)");
+            //if (index > -1) 
+            //{
+            //    clone.name = clone.name.Substring(0, index);
+            //    //clone.name = clone.name + i;
+            //}
             
             //Debug.Log(clone.name.Substring(0,5));
 
