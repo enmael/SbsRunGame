@@ -453,10 +453,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b7c4a9c4e9d56478bc8759665577a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: 1
   roads: []
-  speed: 50
   createCount: 4
   offset: 40
+  speedManager: {fileID: 1375094654}
 --- !u!4 &524272945
 Transform:
   m_ObjectHideFlags: 0
@@ -1152,6 +1153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac21741d6c8cad34a80f48d7a378a2b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: 0
   roadLine: 1
   positionX: 3.5
   speed: 25
@@ -1370,6 +1372,100 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1375094653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1375094655}
+  - component: {fileID: 1375094654}
+  m_Layer: 0
+  m_Name: SppedManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1375094654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375094653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ebf750841415a84689de6bc0cdecfb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stat: 1
+  speed: 30
+  limitSpeed: 75
+  incraseVaue: 5
+--- !u!4 &1375094655
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375094653}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1401159240
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1401159242}
+  - component: {fileID: 1401159241}
+  m_Layer: 0
+  m_Name: OdstacleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1401159241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401159240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d42ae0dff89f0743a8845f561b5ed9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefad: {fileID: 0}
+  createCount: 5
+--- !u!4 &1401159242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401159240}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1413849796 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7873187647639627565, guid: c1451a0a970dd404aa55fec171a882c2, type: 3}
@@ -1925,3 +2021,5 @@ SceneRoots:
   - {fileID: 524272945}
   - {fileID: 1309284284}
   - {fileID: 1768447482}
+  - {fileID: 1375094655}
+  - {fileID: 1401159242}

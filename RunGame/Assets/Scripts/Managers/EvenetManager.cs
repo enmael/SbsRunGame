@@ -13,36 +13,48 @@ public enum EventType
     }
 public class EvenetManager
 {
-    private static readonly IDictionary <EventType, UnityAction> dicionary = new Dictionary <EventType, UnityAction> (); 
-    
-    //备刀
-    public static void Subscribe(EventType type, UnityAction unityAction) 
+
+    private static readonly IDictionary<EventType, UnityEvent> dictionary = new Dictionary<EventType, UnityEvent>();
+
+    // 备刀
+    public static void Subscribe(EventType eventType, UnityAction unityAction)
     {
-        //UnityEvent unityEvent;
-        //if (dicionary.TryGetValue(type, out unityAction) == false)
-        //{
-        //    dicionary.Add (type, unityAction);  
-        //}
-        //else
-        //{
+        UnityEvent unityEvent = null;
 
-        //}
+        if (dictionary.TryGetValue(eventType, out unityEvent))
+        {
+            unityEvent.AddListener(unityAction);
+        }
+        else
+        {
+            unityEvent = new UnityEvent();
 
+            unityEvent.AddListener(unityAction);
+
+            dictionary.Add(eventType, unityEvent);
+        }
     }
 
-    //备刀 秦力
-    public static void Unsubscribe(EventType type, UnityAction unityAction)
+    // 备刀 秦力
+    public static void Unsubscribe(EventType eventType, UnityAction unityAction)
     {
+        UnityEvent unityEvent = null;
 
+        if (dictionary.TryGetValue(eventType, out unityEvent))
+        {
+            unityEvent.RemoveListener(unityAction);
+        }
     }
 
     //惯青 
-    public static void Publish(EventType type)
+    public static void Publish(EventType eventType)
     {
+        UnityEvent unityEvent = null;
 
+        if (dictionary.TryGetValue(eventType, out  unityEvent))
+        { 
+            unityEvent.Invoke();
+        }
+        
     }
-
-
-
-
 }

@@ -11,7 +11,8 @@ public enum RoadLine
     RLGHT = 1
             
  }
-public class Runner : MonoBehaviour
+
+public class Runner : State
 {
     RoadManager roadManager;
     SppedManager sppedManager; 
@@ -24,6 +25,8 @@ public class Runner : MonoBehaviour
 
     //public SppedManager sppedManager;
 
+
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();  
@@ -31,6 +34,7 @@ public class Runner : MonoBehaviour
 
     private void OnEnable()
     {
+        base.OnEnable();
         InputManager.Instance.action += OnKeyUpdate;
     }
 
@@ -41,11 +45,14 @@ public class Runner : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (stat == false) return;
         //speed = sppedManager.Speed();
         Move();
     }
     void OnKeyUpdate()
     {
+        if (stat == false) return;
+
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             if(roadLine != RoadLine.LEET) 
@@ -60,6 +67,11 @@ public class Runner : MonoBehaviour
                 roadLine++;
             }
         }
+
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    stat = true;   
+        //}
     }
     private void Move()
     {
@@ -95,6 +107,8 @@ public class Runner : MonoBehaviour
 
     private void OnDisable()
     {
+        base .OnDisable();  
+
         InputManager.Instance.action -= OnKeyUpdate;
     }
 

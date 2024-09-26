@@ -13,7 +13,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Animations;
 
-public class SppedManager : Singleton<SppedManager>
+public class SppedManager : State
 {
    
 
@@ -23,7 +23,7 @@ public class SppedManager : Singleton<SppedManager>
     [SerializeField] float incraseVaue = 5.0f;
     //[SerializeField] float increaseTime = 10.0f;
 
-
+ 
 
     public float Speed
     {
@@ -31,9 +31,14 @@ public class SppedManager : Singleton<SppedManager>
                               //다른데서 접근을 못해서 데이터를 보험함
     }
 
-   public IEnumerator Increase()
+    private void Awake()
     {
-        while(speed <limitSpeed)
+        StartCoroutine(Increase());
+    }
+
+    public IEnumerator Increase()
+    {
+        while(stat == true && speed <limitSpeed)
         {
             yield return CoroutineCache.waitForSecond(2);
 

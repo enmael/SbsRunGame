@@ -45,9 +45,9 @@ public class CoinManager : MonoBehaviour
             //GameObject clone = Instantiate(prefab);
 
             //ResourcesManager 싱글톤으로해서 코드 간소화함
-            GameObject clone = ResourcesManager.Instance.Instantiate("Coin"); 
+            GameObject clone = ResourcesManager.Instance.Instantiate("Coin",gameObject.transform); 
 
-            clone.transform.SetParent(gameObject.transform);
+            //clone.transform.SetParent(gameObject.transform);
 
             clone.transform.localPosition = new Vector3(0, 0, offset * i);
 

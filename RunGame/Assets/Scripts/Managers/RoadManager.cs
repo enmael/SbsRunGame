@@ -4,8 +4,9 @@ using System.ComponentModel.Design.Serialization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.Windows.Speech;
 
-public class RoadManager : MonoBehaviour
+public class RoadManager : State
 {
     //[SerializeField] List <GameObject>list;
     //[SerializeField] float speed = 2;
@@ -16,6 +17,9 @@ public class RoadManager : MonoBehaviour
     [SerializeField] int createCount = 4;
     [SerializeField] float offset = 40.0f;
 
+    [SerializeField] SppedManager speedManager;
+
+
     private void Awake()
     {
         //list = new List<GameObject>();
@@ -25,14 +29,16 @@ public class RoadManager : MonoBehaviour
         roads.Capacity = 10;
         AddRod();
 
-        StartCoroutine(SppedManager.Instance.Increase()); //코루틴 호출
+       // StartCoroutine(SppedManager.Instance.Increase()); //코루틴 호출
     }
 
     private void Update() //���� �����δ�.
     {
+        if (stat == false) return;
+
         for (int i = 0; i < roads.Count; i++)
         {
-            roads[i].transform.Translate(Vector3.back * SppedManager.Instance.Speed * Time.deltaTime);
+            roads[i].transform.Translate(Vector3.back * speedManager.Speed * Time.deltaTime);
         }
 
         if (Input.GetKeyDown(KeyCode.Q))

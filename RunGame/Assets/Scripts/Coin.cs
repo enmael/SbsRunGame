@@ -10,17 +10,19 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Coin : MonoBehaviour, IColliderable
+public class Coin : State, IColliderable
 {
     
     [SerializeField] float rotationSpeed = 300;
     [SerializeField] GameObject rotationObject;
-    [SerializeField] ParticleSystem particleSystem;
+    //[SerializeField] ParticleSystem particleSystem;
     //[SerializeField] GameObject playe;
 
 
     private void OnEnable()
     {
+        base.OnEnable();
+
         rotationObject = GameObject.Find("RotationGameObject");
         rotationSpeed = rotationObject.GetComponent<RotationObject>().Speed;
 
@@ -29,14 +31,16 @@ public class Coin : MonoBehaviour, IColliderable
 
     private void Update()
     {
+        if (stat == false) return;
+
         //float posY = rotate.Rotatesreturn();
         // transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
         transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            particleSystem.Play();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    particleSystem.Play();
+        //}
     }
     
     //public void Activvater () 
@@ -48,7 +52,7 @@ public class Coin : MonoBehaviour, IColliderable
 
     public void Activatr()
     {
-        particleSystem.Play();
+        //particleSystem.Play();
 
         gameObject.GetComponent<MeshRenderer>().enabled = false;
         gameObject.GetComponent<BoxCollider>().enabled = false;
