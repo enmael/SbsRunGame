@@ -74,10 +74,10 @@ public class SceneryManager : Singleton<SceneryManager>
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    StartCoroutine(AsyncLoad(1));
-        //}
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            StartCoroutine(AsyncLoad(1));
+        }
 
         //OnButtonClick();
     }

@@ -13,6 +13,8 @@ public class OdstacleManager : MonoBehaviour
     [SerializeField] private int createCount = 5;
     [SerializeField] int random;
 
+    [SerializeField] private GameObject opm;
+
     private void Start()
     {
         odstacles.Capacity = 10;
@@ -69,7 +71,9 @@ public class OdstacleManager : MonoBehaviour
             }
             odstacles[random].SetActive(true);
 
-           
+            //Vector3 opmVector = opm.transform.position;
+            //odstacles[random].transform.position = opmVector;
+
 
 
             #endregion

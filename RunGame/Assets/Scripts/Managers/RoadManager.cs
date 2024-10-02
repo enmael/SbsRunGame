@@ -20,6 +20,8 @@ public class RoadManager : State
     [SerializeField] SppedManager speedManager;
 
 
+   // [SerializeField] GameObject odstacle;
+
     private void Awake()
     {
         //list = new List<GameObject>();
@@ -78,6 +80,13 @@ public class RoadManager : State
         newRoad.transform.position = new Vector3(0, 0, newZ);
 
         roads.Add(newRoad);
-        #endregion
+
+       
+
+        //odstacle.transform.SetParent(newRoad);
+
+        // 필요 시 상대적 위치 초기화
+        //odstacle.transform.localPosition = Vector3.zero;
     }
+        #endregion
 }
