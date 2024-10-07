@@ -15,6 +15,10 @@ public class OdstacleManager : MonoBehaviour
 
     [SerializeField] private GameObject opm;
 
+    [SerializeField] Transform[] obstacleTransform;
+
+    OdstaclePositionManager positionManager;
+
     private void Start()
     {
         odstacles.Capacity = 10;
@@ -69,11 +73,14 @@ public class OdstacleManager : MonoBehaviour
                 //Debug.Log(odstacles[random].activeSelf);
                 random = (random + 1) % odstacles.Count;
             }
-            odstacles[random].SetActive(true);
 
-            //Vector3 opmVector = opm.transform.position;
-            //odstacles[random].transform.position = opmVector;
+            //랜덤으로 설정된  odstacles 오브젝트위치 설정
 
+            int index = Random.Range(0, obstacleTransform.Length);
+
+            //positionManager.Index
+
+           //odstacles[random].SetActive(true);
 
 
             #endregion
@@ -112,8 +119,6 @@ public class OdstacleManager : MonoBehaviour
 
 
     }
-
-
     private bool ExamineActive()
     {
         for(int i = 0; i < odstacles.Count; i++) 
@@ -124,6 +129,11 @@ public class OdstacleManager : MonoBehaviour
             }
         }
         return true;
+    }
+
+    public GameObject GetObstacle()
+    {
+        return odstacles[random];
     }
 
 }

@@ -15,8 +15,12 @@ public class OdstaclePositionManager : MonoBehaviour
 
     [SerializeField] float[] randomPositionZ = new float[16];
 
-    #endregion
+    [SerializeField] OdstacleManager odstacleManager;
+    [SerializeField] bool state = false;
 
+    [SerializeField] Transform[] positionX;   
+    #endregion
+   
 
     void Start()
     {
@@ -24,7 +28,13 @@ public class OdstaclePositionManager : MonoBehaviour
         //ArrayPosZ();
         //StartCoroutine(ArrayTransfiem());
         #endregion
+
+        
+        
+
         StartCoroutine(SetPositiom());
+
+
     }
     #region ∞≠ªÁ¥‘ «Æ¿Ã
     private void Awake()
@@ -39,6 +49,7 @@ public class OdstaclePositionManager : MonoBehaviour
 
     public void InitializedPosition()
     {
+        state = true;   
         index = (index +1) %parentRoad.Length;
 
         transform.SetParent(parentRoad[index]);
@@ -47,8 +58,7 @@ public class OdstaclePositionManager : MonoBehaviour
         //transform.position = parentRoad[index].transform.localPosition;
     }
 
-    // Update is called once per frame
-  
+
 
     private IEnumerator SetPositiom() 
     {
@@ -56,8 +66,22 @@ public class OdstaclePositionManager : MonoBehaviour
         {
             yield return CoroutineCache.waitForSecond(2.5f);
 
+            
+
             transform.localPosition = new Vector3(0, 0, randomPositionZ[Random.Range(0, randomPositionZ.Length)]);
 
+
+            if(state == true)
+            {
+                odstacleManager.GetObstacle().SetActive(true);  
+
+                odstacleManager.GetObstacle().transform.position = transform.localPosition;
+
+                odstacleManager.GetObstacle().transform.localPosition = positionX[Random.Range(0, positionX.Length)].position;
+            
+           
+                odstacleManager.GetObstacle().transform.SetParent(transform.root.GetChild((index + 1) % parentRoad.Length));
+            }
         }
     }
 
@@ -95,4 +119,7 @@ public class OdstaclePositionManager : MonoBehaviour
     //}
 
     #endregion
+
+    
+    
 }

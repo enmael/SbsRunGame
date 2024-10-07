@@ -530,6 +530,15 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  odstacleManager: {fileID: 1401159241}
+  PosX:
+  - 0
+  - 0
+  - 0
+  positionX:
+  - {fileID: 1569529834}
+  - {fileID: 815316225}
+  - {fileID: 1090768099}
 --- !u!4 &586139521
 Transform:
   m_ObjectHideFlags: 0
@@ -1610,6 +1619,10 @@ MonoBehaviour:
   createCount: 5
   random: 0
   opm: {fileID: 586139519}
+  obstacleTransform:
+  - {fileID: 1569529834}
+  - {fileID: 815316225}
+  - {fileID: 1090768099}
 --- !u!4 &1401159242
 Transform:
   m_ObjectHideFlags: 0
